@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 
 	"w.durrett.mod/internal/models"
-	
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -22,7 +22,7 @@ type application struct {
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
-	dsn := flag.String("dsn", "web:password1@/snippetbox?parseTime=true", "MySQL data source name")
+	dsn := flag.String("dsn", "web:password1@(localhost)/snippetbox?parseTime=true", "MySQL data source name")
 	flag.Parse()
 
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
